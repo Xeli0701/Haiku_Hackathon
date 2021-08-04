@@ -39,4 +39,7 @@ if __name__ == '__main__':
     a,b,c = Random_haiku()
     print(f"{a} {b} {c}")
     print(Random_haiku())
+    print(Kisetsu_haiku("春"))
+    print(Kisetsu_haiku("夏"))
+    print(Kisetsu_haiku("秋"))
     print(Kisetsu_haiku("冬"))
