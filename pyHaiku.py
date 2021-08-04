@@ -1,7 +1,7 @@
 import random
 
 def Random_haiku():
-    with open("data\haiku.txt", encoding="utf-8") as f:
+    with open("haiku.txt", encoding="utf-8") as f:
         haiku_list = f.readlines()
     haiku_first = []
     haiku_second = []
