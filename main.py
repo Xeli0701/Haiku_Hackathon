@@ -18,9 +18,9 @@ app.add_middleware(
 )
 
 @app.get("/haiku/{message}")
-async def getNyanMessage():
+async def getNyanMessage(message):
     #ランダム俳句返し
-    message = urllib.parse.unquote()
+    message = urllib.parse.unquote(message)
     if ["春","夏","秋","冬"] in message:
         haikufirst,haikusecond,haikuthird = Kisetsu_haiku(message)
     else:
