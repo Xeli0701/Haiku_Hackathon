@@ -5,6 +5,10 @@
 - 仕様は考える
 - 季語などの考慮をする事を目標、APIとして使える事を考えるが、どうにもアレだったらStreamlitとかを使う
 
+## 関連
+- フロントエンド
+- https://github.com/Xeli0701/haiku_hackathon_front
+
 ## つかいかた
 - data/haiku.txtの中に好きな俳句を575区切りで入れる
 - くみあわせてくれる　くじびき。
