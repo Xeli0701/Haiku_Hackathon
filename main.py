@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import urllib.parse
-from pyHaiku import Random_haiku
+from pyHaiku import Random_haiku,Kisetsu_haiku
 
 app = FastAPI()
 
@@ -17,11 +17,14 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-@app.get("/haiku")
+@app.get("/haiku/{message}")
 async def getNyanMessage():
     #ランダム俳句返し
-    #message = urllib.parse.unquote()
-    replyHaiku = Random_haiku()
+    message = urllib.parse.unquote()
+    if message:
+        haikufirst,haikusecond,haikuthird = Kisetsu_haiku()
+    else:
+        haikufirst,haikusecond,haikuthird = Random_haiku()
     
-    print(replyHaiku)
-    return {"message": replyHaiku,"status":"success"}
+    print(f"{haikufirst} {haikusecond} {haikuthird}")
+    return {"message1": haikufirst,"message2": haikusecond,"message3": haikuthird,"status":"success"}
