@@ -23,8 +23,10 @@ async def getNyanMessage(message):
     message = urllib.parse.unquote(message)
     if "春" in message or "夏" in message or "秋" in message or "冬" in message:
         haikufirst,haikusecond,haikuthird = Kisetsu_haiku(message)
+        season = message
     else:
         haikufirst,haikusecond,haikuthird = Random_haiku()
+        season = "季節なし"
     
-    print(f"{haikufirst} {haikusecond} {haikuthird}")
-    return {"message1": haikufirst,"message2": haikusecond,"message3": haikuthird,"status":"success"}
+    print(f"{season}:{haikufirst} {haikusecond} {haikuthird}")
+    return {"message1": haikufirst,"message2": haikusecond,"message3": haikuthird,"season": season,"status":"success"}
